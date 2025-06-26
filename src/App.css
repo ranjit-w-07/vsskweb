@@ -1,0 +1,692 @@
+/* Custom styles for श्री विठ्ठल सहकारी साखर कारखाना */
+
+/* Global font styling */
+* {
+  box-sizing: border-box;
+  font-family: 'Ek Mukta', Helvetica, Arial, Verdana, sans-serif !important;
+  font-weight: bold !important;
+  font-size: 17px !important;
+  line-height: 21px !important;
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* FontAwesome and icon font exceptions - preserve original fonts */
+.fa,
+.fas,
+.far,
+.fal,
+.fab,
+.fad,
+.fa-solid,
+.fa-regular,
+.fa-light,
+.fa-brands,
+.fa-duotone,
+[class*='fa-']:before,
+[class*='fa-']:after,
+.fontawesome-i2svg-active .fa,
+i[class*='fa-'],
+span[class*='fa-'],
+i[class*='fa-']::before,
+i[class*='fa-']::after {
+  font-family:
+    'Font Awesome 6 Free', 'Font Awesome 6 Pro', 'Font Awesome 6 Brands', 'FontAwesome' !important;
+  font-weight: 900 !important;
+  font-size: inherit !important;
+  line-height: inherit !important;
+}
+
+.fa-brands,
+.fab {
+  font-family: 'Font Awesome 6 Brands', 'FontAwesome' !important;
+  font-weight: 400 !important;
+}
+
+.fa-regular,
+.far {
+  font-family: 'Font Awesome 6 Free', 'FontAwesome' !important;
+  font-weight: 400 !important;
+}
+
+.fa-light,
+.fal {
+  font-family: 'Font Awesome 6 Pro', 'FontAwesome' !important;
+  font-weight: 300 !important;
+}
+
+/* Additional icon styling - ensure proper display */
+i {
+  font-style: normal !important;
+}
+
+/* Icon container styling */
+.service-icon i,
+.contact-icon i,
+[class*='fa-'] {
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Preserve FontAwesome sizing classes */
+.fa-2x {
+  font-size: 2em !important;
+}
+.fa-3x {
+  font-size: 3em !important;
+}
+.fa-4x {
+  font-size: 4em !important;
+}
+.fa-lg {
+  font-size: 1.33333em !important;
+}
+.fa-sm {
+  font-size: 0.875em !important;
+}
+.fa-xs {
+  font-size: 0.75em !important;
+}
+
+/* Reset and base styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Ek Mukta', Helvetica, Arial, Verdana, sans-serif;
+  font-weight: bold;
+  font-size: 17px;
+  line-height: 21px;
+  color: #333;
+}
+
+#root {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+
+/* Preserve relative sizing for specific elements */
+h1,
+.display-1,
+.display-2,
+.display-3,
+.display-4,
+.display-5,
+.display-6 {
+  font-family: 'Ek Mukta', Helvetica, Arial, Verdana, sans-serif !important;
+  font-weight: bold !important;
+  line-height: 1.2 !important;
+}
+
+h1,
+.display-4 {
+  font-size: 2.5rem !important;
+}
+
+h2 {
+  font-size: 2rem !important;
+}
+
+h3 {
+  font-size: 1.75rem !important;
+}
+
+h4 {
+  font-size: 1.5rem !important;
+}
+
+h5 {
+  font-size: 1.25rem !important;
+}
+
+h6 {
+  font-size: 1.1rem !important;
+}
+
+.lead {
+  font-size: 1.25rem !important;
+  font-weight: bold !important;
+}
+
+.small,
+small {
+  font-size: 0.875rem !important;
+  font-weight: bold !important;
+}
+
+.text-muted {
+  font-weight: 600 !important;
+}
+
+/* Button text */
+.btn {
+  font-family: 'Ek Mukta', Helvetica, Arial, Verdana, sans-serif !important;
+  font-weight: bold !important;
+  font-size: 17px !important;
+}
+
+/* Form elements */
+input,
+textarea,
+select,
+label {
+  font-family: 'Ek Mukta', Helvetica, Arial, Verdana, sans-serif !important;
+  font-weight: bold !important;
+  font-size: 17px !important;
+  line-height: 21px !important;
+}
+
+/* Navigation */
+.nav-link {
+  transition: all 0.5s ease;
+  font-weight: bold !important;
+  font-family: 'Ek Mukta', Helvetica, Arial, Verdana, sans-serif !important;
+  font-size: 17px !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-link::before {
+  content: ''; /* r changed */
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(248, 245, 247, 0.2), transparent);
+  transition: left 2s;
+}
+
+.nav-link:hover::before {
+  left: 100%;
+}
+.nav-link:active {
+  background-color: #f8f9fa !important;
+  color: red !important;
+}
+.nav-link:hover {
+  /* background-color: #f8f9fa !important; */
+  /* color: red !important; */
+  transform: translateY(-8px);
+  transition: all 0.4s ease;
+  /* border: 1px solid red !important;    +++++++++ use or not just comments +++++++++++ */
+  background: #e06805 !important;
+}
+
+/* Hero Slider styles */
+/* Hero Slider styles */
+/* Hero Slider Container */
+/* === HeroSlider Styles === */
+
+.hero-slider {
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
+}
+
+.carousel-item {
+  height: 100vh;
+  position: relative;
+}
+
+/* Blurred background */
+.blur-background {
+  position: absolute;
+  inset: 0;
+  background: inherit;
+  background-size: cover;
+  background-position: center;
+  filter: blur(20px) brightness(0.6);
+  z-index: 1;
+}
+
+/* Main Image */
+.main-slide-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  position: relative;
+  z-index: 2;
+}
+
+/* Caption */
+.carousel-caption {
+  z-index: 3;
+}
+
+.slide-title {
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+  animation: fadeInUp 1.2s ease-out;
+  letter-spacing: 1px;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Indicators */
+.carousel-indicators {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.carousel-indicators button {
+  width: 12px;
+  height: 12px;
+  background-color: #fff;
+  border-radius: 50%;
+  border: none;
+  opacity: 0.7;
+  transition: all 0.3s ease;
+}
+
+.carousel-indicators button.active {
+  opacity: 1;
+  transform: scale(1.2);
+}
+
+/* Controls */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  padding: 10px;
+  z-index: 6;
+}
+
+/* Statistics Counter styles */
+.statistics-section {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #12db4e 0%, #78ca0c 100%);
+}
+
+.statistics-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 10px,
+    rgba(255, 255, 255, 0.03) 10px,
+    rgba(255, 255, 255, 0.03) 20px
+  );
+  pointer-events: none;
+}
+
+.counter-suffix {
+  font-size: 2.2rem;
+  font-weight: bold !important;
+  font-family: 'Ek Mukta', Helvetica, Arial, Verdana, sans-serif !important;
+}
+
+.counter-text {
+  font-size: 1.1rem;
+  font-weight: bold !important;
+  font-family: 'Ek Mukta', Helvetica, Arial, Verdana, sans-serif !important;
+  margin-top: 10px;
+  text-shadow: 1px 1px 1px rgba(19, 157, 192, 0.3);
+}
+
+/* Services Section styles */
+.services-section {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.service-card {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid #efe9ea;
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(237, 42, 48, 0.1), transparent);
+  transition: left 0.6s;
+}
+
+.service-card:hover::before {
+  left: 100%;
+}
+
+.service-card:hover {
+  transform: translateY(-10px) scale(1.08);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15) !important;
+  border-color: #e212ae;
+  border: 2px solid rgb(219, 55, 55);
+}
+
+.service-icon i {
+  transition: all 0.4s ease;
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.service-card:hover .service-icon i {
+  transform: scale(1.2) rotate(5deg);
+  filter: drop-shadow(4px 4px 8px rgba(0, 0, 0, 0.2));
+}
+
+/* About Section styles */
+.about-section {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  position: relative;
+}
+
+.about-image {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.about-image img {
+  transition: transform 0.5s ease;
+  border-radius: 10px;
+}
+
+.about-image:hover img {
+  transform: scale(1.05);
+}
+
+.about-image::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, rgba(237, 42, 48, 0.1), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.about-image:hover::after {
+  opacity: 1;
+}
+
+/* Button styles */
+.btn {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  font-weight: 500;
+  position: relative;
+  overflow: hidden;
+  border-radius: 25px;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.btn:hover::before {
+  left: 100%;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, rgb(20, 151, 226) 0%, rgb(26, 131, 218) 100%);
+  border: none;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, rgb(20, 151, 226) 0%, rgb(26, 131, 218) 100%);
+}
+
+/* Footer styles */
+/* Footer styles */
+.footer {
+  position: relative;
+  z-index: 2; /* Keep content above video */
+}
+
+/* Optional: ensure video fills container */
+.footer-video {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Optional: fallback background image */
+.footer-video-wrapper {
+  /* background-image: url('/assets/images/footer-fallback.jpg'); */
+  background-size: cover;
+  background-position: center;
+  opacity: 0.3;
+}
+
+/* .footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: repeating-linear-gradient(
+    90deg,
+    transparent,
+    transparent 50px,
+    rgba(255,255,255,0.02) 50px,
+    rgba(255,255,255,0.02) 100px
+  ); */
+/* } */
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .counter-number {
+    font-size: 2.5rem;
+  }
+
+  .counter-suffix {
+    font-size: 1.8rem;
+  }
+
+  .slide-title {
+    font-size: 1.8rem !important;
+  }
+
+  .service-card {
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .counter-number {
+    font-size: 2rem;
+  }
+
+  .counter-suffix {
+    font-size: 1.5rem;
+  }
+
+  .slide-title {
+    font-size: 1.5rem !important;
+  }
+}
+
+/* Loading spinner */
+#load {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+}
+
+.spinner-border {
+  width: 3rem;
+  height: 3rem;
+  border-width: 0.3em;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, rgb(20, 151, 226) 0%, rgb(26, 131, 218) 100%);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #c41e3a 0%, #ed2a30 100%);
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Focus styles for accessibility */
+.btn:focus,
+.nav-link:focus {
+  outline: 2px solid #0954c5;
+  outline-offset: 2px;
+}
+
+/* Text selection */
+::selection {
+  background: #ed2a2a;
+  color: white;
+}
+
+/* Print styles */
+@media print {
+  .masthead,
+  .footer,
+  .btn {
+    display: none !important;
+  }
+}
+
+/* Make header and nav responsive */
+@media (max-width: 768px) {
+  .header-bar {
+    flex-direction: column;
+    padding: 10px;
+    text-align: center;
+  }
+
+  .top-bar {
+    text-align: center;
+  }
+
+  .top-bar span {
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  .mobile-menu .nav-link {
+    font-size: 16px;
+    padding: 10px 0;
+    display: block;
+  }
+
+  .mobile-menu .text-muted {
+    font-size: 14px;
+  }
+
+  .header-bar img {
+    max-width: 100px;
+    margin: 0 auto;
+  }
+}
+/* Your existing styles above... */
+
+/* 🔽 Add this at the very bottom of App.css */
+@media (max-width: 768px) {
+  .header-bar {
+    flex-direction: column;
+    padding: 10px;
+    text-align: center;
+  }
+
+  .top-bar span {
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  .mobile-menu .nav-link {
+    font-size: 16px;
+    padding: 10px 0;
+    display: block;
+  }
+
+  .mobile-menu .text-muted {
+    font-size: 14px;
+  }
+
+  .header-bar img {
+    max-width: 100px;
+    margin: 0 auto;
+  }
+}
+/* r added css for award counts no*/
+.stat-box {
+  transition: 0.3s;
+}
+.stat-box:hover {
+  background-color: #f8f9fa;
+  transform: scale(1.02);
+}
