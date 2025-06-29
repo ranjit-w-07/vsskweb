@@ -1,3 +1,6 @@
+// Updated Header.jsx (only updated parts shown for clarity)
+// Step-by-step changes to make it responsive across mobile and tablet
+
 import React, { memo } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
@@ -23,93 +26,66 @@ const Header = memo(() => {
   return (
     <header className="masthead shadow-sm">
       {/* Top Bar */}
-      <div
-        className="top-bar py-2"
-        style={{
-          background: 'linear-gradient(135deg, rgb(20, 151, 226) 0%, rgb(26, 131, 218) 100%)',
-        }}
-      >
-        <div className="row">
-          <div
-            className="col-12"
-            style={{
-              background: 'linear-gradient(135deg, rgb(20, 151, 226) 0%, rgb(26, 131, 218) 100%)',
-              color: 'white',
-            }}
-          >
-            <div className="d-flex justify-content-start align-items-center px-3 py-1 flex-wrap">
-              <span className="me-4 ">
-                {' '}
-                {/*//<span className="me-4 d-none d-md-inline remove // */}
-                <i className="fas fa-phone me-2"></i>
-                {contactInfo.phone}
-              </span>
-              <span>
-                {' '}
-                {/*<span className="d-none d-md-inline"> */}
-                <i className="fas fa-envelope me-2"></i>
-                {contactInfo.email}
-              </span>
-            </div>
+      <div className="top-bar py-2 bg-primary text-white">
+        <div className="container-fluid px-3">
+          <div className="d-flex justify-content-start flex-wrap">
+            <span className="me-4">
+              <i className="fas fa-phone me-2"></i>
+              {contactInfo.phone}
+            </span>
+            <span>
+              <i className="fas fa-envelope me-2"></i>
+              {contactInfo.email}
+            </span>
           </div>
         </div>
       </div>
 
       {/* Main Header */}
-      <div className="header-bar bg-white py-3">
-        <div className="d-flex align-items-center justify-content-between flex-wrap w-100 px-3">
+      <div className="header-bar bg-white py-3 border-bottom">
+        <div className="container-fluid px-3 d-flex justify-content-between align-items-center flex-wrap">
+
           {/* LEFT SIDE */}
-          <div className="d-flex align-items-center flex-shrink-1" style={{ maxWidth: '65%' }}>
-            {/* Logo */}
+          <div className="d-flex align-items-center gap-2 flex-wrap" style={{ maxWidth: '70%' }}>
             <img
               src={siteData.logoUrl}
               alt={siteData.title}
-              className="img-fluid d-none d-md-block me-3"
-              style={{ maxHeight: '80px' }}
+              className="img-fluid"
+              style={{ maxHeight: '60px', width: 'auto' }}
             />
-
-            {/* Title */}
-            <div className="d-flex flex-column justify-content-center">
-              <h6 className="mb-0 fw-bold text-dark" style={{ whiteSpace: 'nowrap' }}>
+            <div className="d-flex flex-column">
+              <h6 className="mb-0 fw-bold text-dark small-text-title">
                 श्री विठ्ठल सहकारी साखर कारखाना लि.
               </h6>
-              <small className="text-muted" style={{ whiteSpace: 'nowrap' }}>
-                वेणुनगर / गुरसाळे
-              </small>
+              <small className="text-muted">वेणुनगर / गुरसाळे</small>
             </div>
-
-            {/* Vitthal Image */}
             <img
               src="/assets/images/vitthal.jpg"
               alt="Vitthal"
-              className="img-fluid d-none d-md-block ms-3"
-              style={{ maxHeight: '60px' }}
+              className="img-fluid d-none d-md-block"
+              style={{ maxHeight: '50px', width: 'auto' }}
             />
           </div>
 
-          {/* 🟧 HAMBURGER BUTTON (MOBILE ONLY) */}
+          {/* HAMBURGER (MOBILE) */}
           <button
-            className="btn btn-outline-primary d-md-none ms-auto"
+            className="btn btn-outline-primary d-md-none"
             onClick={handleMenuToggle}
-            style={{ fontSize: '1.5rem' }}
             aria-label="Toggle menu"
           >
             ☰
           </button>
 
-          {/* RIGHT SIDE DESKTOP NAV */}
-          <nav className="d-none d-md-block ms-auto" style={{ maxWidth: '40%' }}>
-            <ul className="navbar-nav d-flex flex-row justify-content-end align-items-center">
+          {/* NAVIGATION LINKS (DESKTOP ONLY) */}
+          <nav className="d-none d-md-block">
+            <ul className="navbar-nav d-flex flex-row flex-wrap align-items-center gap-2">
               {navigationData.map((item) => (
-                <li key={item._id} className="nav-item mx-1">
+                <li key={item._id} className="nav-item">
                   <Link
                     to={item.path}
-                    className="nav-link px-3 py-2 rounded-5"
-                    style={{
-                      whiteSpace: 'nowrap',
-                      background: location.pathname === item.path ? '#e06805' : 'white',
-                      color: location.pathname === item.path ? 'white' : 'black',
-                    }}
+                    className={`nav-link px-3 py-2 rounded-5 ${
+                      location.pathname === item.path ? 'bg-warning text-white' : 'text-dark'
+                    }`}
                     onClick={() => handleNavClick(item.path)}
                   >
                     {item.title}
@@ -121,38 +97,26 @@ const Header = memo(() => {
         </div>
       </div>
 
-      {/* Mobile Navigation */}
+      {/* MOBILE MENU */}
       {isMobileMenuOpen && (
-        <div className="mobile-menu bg-white border-top d-md-none">
-          <div className="container">
-            <nav className="navbar-nav py-3">
-              {navigationData.map((item) => (
-                <Link
-                  key={item._id}
-                  to={item.path}
-                  className={`nav-link py-2 border-bottom ${
-                    location.pathname === item.path ? 'active text-primary fw-bold' : 'text-dark'
-                  }`}
-                  onClick={() => handleNavClick(item.path)}
-                >
-                  {item.title}
-                </Link>
-              ))}
-
-              {/* Mobile Contact Info */}
-              <div className="mt-3 pt-3 border-top">
-                <div className="text-muted small">
-                  <div className="mb-2">
-                    <i className="fas fa-phone me-2"></i>
-                    {contactInfo.phone}
-                  </div>
-                  <div>
-                    <i className="fas fa-envelope me-2"></i>
-                    {contactInfo.email}
-                  </div>
-                </div>
-              </div>
-            </nav>
+        <div className="mobile-menu bg-white d-md-none border-top">
+          <div className="p-3">
+            {navigationData.map((item) => (
+              <Link
+                key={item._id}
+                to={item.path}
+                className={`d-block py-2 border-bottom ${
+                  location.pathname === item.path ? 'fw-bold text-primary' : 'text-dark'
+                }`}
+                onClick={() => handleNavClick(item.path)}
+              >
+                {item.title}
+              </Link>
+            ))}
+            <div className="pt-3 mt-3 border-top small text-muted">
+              <div><i className="fas fa-phone me-2"></i>{contactInfo.phone}</div>
+              <div><i className="fas fa-envelope me-2"></i>{contactInfo.email}</div>
+            </div>
           </div>
         </div>
       )}
